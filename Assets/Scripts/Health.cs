@@ -43,6 +43,21 @@ public class Health : MonoBehaviour
         }
     }
 
+    public void RegenHealth(int healthAmount)
+    {
+        if (currentHealth < maxHealth)
+        {
+            currentHealth += healthAmount;
+            UpdateHealthBar();
+            Debug.Log("Player health added by" + healthAmount + " HP. Current health" + currentHealth);
+        } else
+        {
+            Debug.Log("Player already have full HP");
+            return;
+        }
+        
+    }
+
     private void UpdateHealthBar()
     {
         if (healthBar != null)

@@ -68,7 +68,6 @@ public class LevelGenerator : MonoBehaviour
             {
                 Debug.Log($"Level generated! Floor tiles: {floorPositions.Count}");
 
-                // Pindah player di hierarchy ke posisi random floor
                 if (player != null)
                 {
                     Vector2Int spawnPos = GetRandomFloorPosition(floorPositions);
