@@ -11,7 +11,7 @@ public class Health : MonoBehaviour
     [SerializeField] private Color lowHealthColor = Color.red;
 
     private int currentHealth;
-
+    
     void Start()
     {
         currentHealth = maxHealth;

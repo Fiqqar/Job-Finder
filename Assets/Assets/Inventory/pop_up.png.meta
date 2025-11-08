@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b42f24c469951a34e8d5fcf84ad72093
+guid: f59626d5bf2a4fa44976978142dac9c6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3560652885182804432
-    second: inventorySign_0
+      213: -8723889434190676893
+    second: pop_up_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,10 +49,10 @@ TextureImporter:
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 1
-  spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 512
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  alignment: 9
+  spritePivot: {x: 0.49875718, y: 0.5024857}
+  spritePixelsToUnits: 320
+  spriteBorder: {x: 100, y: 50, z: 98, w: 47}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -96,53 +96,27 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: inventorySign_0
+      name: pop_up_0
       rect:
         serializedVersion: 2
-        x: 45
-        y: 355
-        width: 244
-        height: 72
+        x: 99
+        y: 49
+        width: 442
+        height: 542
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 03e853ae015069ec0800000000000000
-      internalID: -3560652885182804432
+      spriteID: 36cf74fd7c48ee680800000000000000
+      internalID: -8723889434190676893
       vertices: []
       indices: 
       edges: []
@@ -152,7 +126,7 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
@@ -161,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      inventorySign_0: -3560652885182804432
+      pop_up_0: -8723889434190676893
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

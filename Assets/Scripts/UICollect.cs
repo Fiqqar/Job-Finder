@@ -1,42 +1,35 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class UICollect : MonoBehaviour
 {
     public TextMeshProUGUI jobText;
     public TextMeshProUGUI coffeeText;
 
-    private int jobCount = 0;
-    private int coffeeCount = 0;
-    private int maxJob = 5;
-    private int maxCoffee = 5;
-
-
-    private void Start()
+    void Start()
     {
-        jobText.text = $"{jobCount}/{maxJob}";
-        coffeeText.text = $"{coffeeCount}/{maxCoffee}";
+        int jobTarget = 5 + (GameManager.instance.currentLevel - 1) * GameManager.instance.extraCollectiblePerLevel;
+        int coffeeTarget = 5 + (GameManager.instance.currentLevel - 1) * GameManager.instance.extraCollectiblePerLevel;
+
+        GameManager.instance.RegisterCollectibleTargets(jobTarget, coffeeTarget);
+        UpdateUI();
     }
+
     public void AddJob()
     {
-        jobCount++;
+        GameManager.instance.AddJob();
         UpdateUI();
     }
 
     public void AddCoffee()
     {
-        coffeeCount++;
+        GameManager.instance.AddCoffee();
         UpdateUI();
     }
 
     void UpdateUI()
     {
-        jobText.text = $"{jobCount}/{maxJob}";
-        coffeeText.text = $"{coffeeCount}/{maxCoffee}";
-        if ( jobCount >= maxJob && coffeeCount >= maxCoffee)
-        {
-            print("Lets go! you completed level 1! go find a door to go to the next level");
-        }
+        jobText.text = $"{GameManager.instance.collectedJob}/{GameManager.instance.totalJob}";
+        coffeeText.text = $"{GameManager.instance.collectedCoffee}/{GameManager.instance.totalCoffee}";
     }
 }
