@@ -38,11 +38,17 @@ public class EnemySpawner : MonoBehaviour
             // Convert the tile position to a world position (centered in the tile)
             Vector3 spawnWorldPosition = new Vector3(spawnPosition.x + 0.5f, spawnPosition.y + 0.5f, 0);
 
-            // Create the enemy instance
-            Instantiate(enemyPrefab, spawnWorldPosition, Quaternion.identity);
+            Instantiate(enemyPrefab, spawnWorldPosition, Quaternion.identity, transform);
+
 
             // Remove this point from the list so we don't spawn another enemy on the same tile
             spawnPoints.RemoveAt(randomIndex);
         }
     }
+    public void ClearAllEnemies()
+    {
+        foreach (Transform child in transform)
+            Destroy(child.gameObject);
+    }
+
 }

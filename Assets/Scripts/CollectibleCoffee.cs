@@ -21,6 +21,7 @@ public class CollectibleCoffee : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             collect.AddCoffee();
+            health.RegenHealth(5);
             Destroy(gameObject);
         }
     }

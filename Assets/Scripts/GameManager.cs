@@ -1,14 +1,20 @@
+using TMPro;
+using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    [Header("Spawner References")]
+    public LevelGenerator levelGenerator;
+    public CollectibleSpawner collectibleSpawner;
+    public EnemySpawner enemySpawner;
+    public UICollect uiCollect;
 
     [Header("UI References")]
-    public Canvas popupCanvas;
     public GameObject popupPanel;
-    public GameObject nextButton;
+    public TMP_Text stageText;
 
     [Header("Progress")]
     public int currentLevel = 1;
@@ -39,11 +45,10 @@ public class GameManager : MonoBehaviour
         collectedJob = 0;
         collectedCoffee = 0;
 
-        if (popupCanvas != null) popupCanvas.enabled = false;
         if (popupPanel != null) popupPanel.SetActive(false);
-        if (nextButton != null) nextButton.SetActive(false);
 
         Time.timeScale = 1f;
+        uiCollect.UpdateUI();
     }
 
     public void AddJob()
@@ -62,15 +67,11 @@ public class GameManager : MonoBehaviour
     {
         if (collectedJob >= totalJob && collectedCoffee >= totalCoffee)
         {
-            if (popupCanvas != null) popupCanvas.enabled = true;
-            if (popupPanel != null) {
-                popupPanel.SetActive(true);
-                Debug.Log("pop up jalan");
-            } 
-            if (nextButton != null)
+            if (popupPanel != null && stageText != null)
             {
-                nextButton.SetActive(true);
-                Debug.Log("next button jalan");
+                popupPanel.SetActive(true);
+                stageText.text = "Stage " + currentLevel;
+                Debug.Log("pop up jalan");
             }
 
             Time.timeScale = 0f;
@@ -81,6 +82,33 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         currentLevel++;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Debug.Log("Naik ke stage " + currentLevel);
+
+        if (enemySpawner != null)
+            enemySpawner.ClearAllEnemies();
+        if (collectibleSpawner != null)
+            collectibleSpawner.ClearAllCollectibles();
+
+        int baseJob = 5;
+        int baseCoffee = 5;
+        int jobTarget = baseJob + ((currentLevel - 1) * extraCollectiblePerLevel);
+        int coffeeTarget = baseCoffee + ((currentLevel - 1) * extraCollectiblePerLevel);
+
+        RegisterCollectibleTargets(jobTarget, coffeeTarget);
+
+        if (levelGenerator != null)
+        {
+            levelGenerator.ResetLevel();
+            levelGenerator.GenerateNewStage();
+        }
+
+        if (popupPanel != null) popupPanel.SetActive(false);
     }
+
+
+
+
+
+
+
 }

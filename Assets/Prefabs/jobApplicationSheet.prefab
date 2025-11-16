@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3771517311266808394}
   m_Layer: 0
   m_Name: jobApplicationSheet
-  m_TagString: Untagged
+  m_TagString: Collectible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

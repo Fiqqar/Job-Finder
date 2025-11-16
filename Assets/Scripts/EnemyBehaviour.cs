@@ -41,7 +41,6 @@ public class EnemyBehaviour : MonoBehaviour
 
             if (playerMove != null)
             {
-                // arah knockback: dari musuh ke player
                 Vector2 knockDir = (collision.transform.position - transform.position).normalized;
                 playerMove.Knockback(knockDir, knockbackForce, knockbackDuration);
             }

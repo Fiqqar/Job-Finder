@@ -27,7 +27,7 @@ public class UICollect : MonoBehaviour
         UpdateUI();
     }
 
-    void UpdateUI()
+    public void UpdateUI()
     {
         jobText.text = $"{GameManager.instance.collectedJob}/{GameManager.instance.totalJob}";
         coffeeText.text = $"{GameManager.instance.collectedCoffee}/{GameManager.instance.totalCoffee}";
