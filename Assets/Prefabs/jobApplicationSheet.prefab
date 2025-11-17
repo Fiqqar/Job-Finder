@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 4700000193745546991}
   - component: {fileID: -7073410981884425267}
   - component: {fileID: 3430760261622830878}
-  - component: {fileID: 3771517311266808394}
+  - component: {fileID: 1526648388226812626}
   m_Layer: 0
   m_Name: jobApplicationSheet
-  m_TagString: Collectible
+  m_TagString: Job
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -189,7 +189,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3771517311266808394
+--- !u!114 &1526648388226812626
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,9 +198,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3540019016338405632}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa8f4fc6aecfc7b47aa4460a6456a210, type: 3}
+  m_Script: {fileID: 11500000, guid: 90b493ba4702a1140bd03e8237751d4a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: '::'
+  m_EditorClassIdentifier: Assembly-CSharp::CollectibleItems
   itemName: Job Application Letter
   itemIcon: {fileID: -6057998496557612493, guid: 20ba3583d8d9edc40942e9ef273b0971, type: 3}
   quantity: 1

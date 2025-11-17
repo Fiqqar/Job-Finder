@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 8809044883000232806}
   - component: {fileID: 2820679204123211351}
   - component: {fileID: 6430872679885980763}
-  - component: {fileID: 2661694139518371991}
+  - component: {fileID: 9054802579619704865}
   m_Layer: 0
   m_Name: Coffee
-  m_TagString: Collectible
+  m_TagString: Coffee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -189,7 +189,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.82362175, y: 0.65314615}
   m_EdgeRadius: 0
---- !u!114 &2661694139518371991
+--- !u!114 &9054802579619704865
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,9 +198,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2406768638975890432}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2681614a7c3bae44fa737021a71b2704, type: 3}
+  m_Script: {fileID: 11500000, guid: 90b493ba4702a1140bd03e8237751d4a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: '::'
+  m_EditorClassIdentifier: Assembly-CSharp::CollectibleItems
   itemName: Coffee
   itemIcon: {fileID: 4989583803073689942, guid: dae9ba12b24c33644b6a688023810198, type: 3}
   quantity: 1

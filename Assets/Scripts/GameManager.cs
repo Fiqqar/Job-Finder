@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     [Header("UI References")]
     public GameObject popupPanel;
     public TMP_Text stageText;
+    public GameObject retryPanel;
 
     [Header("Progress")]
     public int currentLevel = 1;
@@ -30,7 +31,6 @@ public class GameManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -103,6 +103,13 @@ public class GameManager : MonoBehaviour
         }
 
         if (popupPanel != null) popupPanel.SetActive(false);
+    }
+
+    public void RetryStage()
+    {
+        Scene current = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(current.buildIndex);
+        Time.timeScale = 1f;
     }
 
 

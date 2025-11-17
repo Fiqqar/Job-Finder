@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
+    public LevelGenerator levelGenerator;
     public Transform target;
     public float smoothSpeed = 0.125f;
     public Vector3 offset = new Vector3(0, 5, -10);
@@ -16,7 +17,6 @@ public class CameraFollow : MonoBehaviour
     {
         originalPos = transform.localPosition;
     }
-
     void LateUpdate()
     {
         if (target == null) return;
@@ -41,5 +41,10 @@ public class CameraFollow : MonoBehaviour
     {
         shakeTimer = duration;
         shakeStrength = strength;
+    }
+    public void StopShake()
+    {
+        shakeTimer = 0f;
+        transform.localPosition = originalPos;
     }
 }

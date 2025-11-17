@@ -180,6 +180,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   speed: 5
+  health: {fileID: 1261252080846246244}
+  collect: {fileID: 0}
+  isDead: 0
 --- !u!114 &1261252080846246244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,6 +195,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01ef389153f415c4299fe8d3678a1051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  retryPanel: {fileID: 0}
+  levelGenerator: {fileID: 0}
   maxHealth: 100
   healthBar: {fileID: 0}
   fillImage: {fileID: 0}

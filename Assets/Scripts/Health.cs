@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
+    public GameObject retryPanel;
+    public LevelGenerator levelGenerator;
     [SerializeField] private int maxHealth = 10;
     [SerializeField] private Slider healthBar;
     [SerializeField] private Image fillImage;
@@ -40,6 +42,8 @@ public class Health : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
+            Time.timeScale = 0f;
+            retryPanel.SetActive(true);
         }
     }
 
@@ -92,6 +96,18 @@ public class Health : MonoBehaviour
     private void Die()
     {
         Debug.Log(gameObject.name + " has been defeated.");
-        Destroy(gameObject); // The simplest way to handle 
+        gameObject.SetActive(false);
+        var player = levelGenerator.player;
+        player.GetComponent<PlayerMovement>().isDead = true;
+
+        var cam = Camera.main.GetComponent<CameraFollow>();
+        if (cam != null) cam.StopShake();
+    }
+
+    public void ResetHealth()
+    {
+        currentHealth = maxHealth;
+        UpdateHealthBar();
+        UpdateHealthBarColor();
     }
 }
