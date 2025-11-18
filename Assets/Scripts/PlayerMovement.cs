@@ -11,10 +11,15 @@ public class PlayerMovement : MonoBehaviour
     private bool isKnocked = false;
     private float knockbackTimer = 0f;
     public bool isDead = false;
+    private SpriteRenderer sr;
+
+    private Animator anim;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -38,6 +43,31 @@ public class PlayerMovement : MonoBehaviour
         if (keyboard.dKey.isPressed) moveInput.x += 1;
 
         moveInput.Normalize();
+
+        if (anim != null)
+        {
+            anim.SetBool("isMoving", moveInput.magnitude > 0);
+
+            if (moveInput.magnitude > 0)
+            {
+                if (Mathf.Abs(moveInput.x) > Mathf.Abs(moveInput.y))
+                {
+                    anim.Play("walkSide");
+                    sr.flipX = moveInput.x < 0;
+                }
+                else
+                {
+                    if (moveInput.y > 0)
+                        anim.Play("walkUp");
+                    else
+                        anim.Play("walkDown");
+                }
+            }
+            else
+            {
+                anim.Play("idleDown");
+            }
+        }
     }
 
     void FixedUpdate()
